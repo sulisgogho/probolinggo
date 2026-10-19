@@ -1,0 +1,237 @@
+{
+  "dataset": "04-gangguan-ti",
+  "judul": "Catatan gangguan TI",
+  "kategori": [
+    "Perangkat",
+    "Aplikasi",
+    "Koneksi"
+  ],
+  "status": [
+    "Baru",
+    "Diproses",
+    "Selesai"
+  ],
+  "label_nilai": "Estimasi biaya penanganan (rupiah)",
+  "data": [
+    {
+      "id": 1,
+      "kode": "IT4-001",
+      "nama": "Printer gagal mencetak",
+      "kategori": "Perangkat",
+      "unit": "Sekretariat",
+      "tanggal": "2026-10-01",
+      "nilai": 250000,
+      "status": "Baru",
+      "catatan": "Data sintetis untuk latihan nomor 1."
+    },
+    {
+      "id": 2,
+      "kode": "IT4-002",
+      "nama": "Portal gagal dibuka",
+      "kategori": "Aplikasi",
+      "unit": "Dinas A",
+      "tanggal": "2026-10-02",
+      "nilai": 500000,
+      "status": "Diproses",
+      "catatan": "Data sintetis untuk latihan nomor 2."
+    },
+    {
+      "id": 3,
+      "kode": "IT4-003",
+      "nama": "WiFi aula terputus",
+      "kategori": "Koneksi",
+      "unit": "Dinas B",
+      "tanggal": "2026-10-03",
+      "nilai": 750000,
+      "status": "Selesai",
+      "catatan": "Data sintetis untuk latihan nomor 3."
+    },
+    {
+      "id": 4,
+      "kode": "IT4-004",
+      "nama": "Laptop tidak menyala",
+      "kategori": "Perangkat",
+      "unit": "Unit Teknis",
+      "tanggal": "2026-10-04",
+      "nilai": 1000000,
+      "status": "Baru",
+      "catatan": ""
+    },
+    {
+      "id": 5,
+      "kode": "IT4-005",
+      "nama": "Aplikasi antrean lambat",
+      "kategori": "Aplikasi",
+      "unit": "Sekretariat",
+      "tanggal": "2026-10-05",
+      "nilai": 1250000,
+      "status": "Diproses",
+      "catatan": "Data sintetis untuk latihan nomor 5."
+    },
+    {
+      "id": 6,
+      "kode": "IT4-006",
+      "nama": "Koneksi loket putus",
+      "kategori": "Koneksi",
+      "unit": "Dinas A",
+      "tanggal": "2026-10-06",
+      "nilai": 0,
+      "status": "Selesai",
+      "catatan": "Data sintetis untuk latihan nomor 6."
+    },
+    {
+      "id": 7,
+      "kode": "IT4-007",
+      "nama": "Scanner tidak terdeteksi",
+      "kategori": "Perangkat",
+      "unit": "Dinas B",
+      "tanggal": "2026-10-07",
+      "nilai": 250000,
+      "status": "Baru",
+      "catatan": "Data sintetis untuk latihan nomor 7."
+    },
+    {
+      "id": 8,
+      "kode": "IT4-008",
+      "nama": "Portal arsip error",
+      "kategori": "Aplikasi",
+      "unit": "Unit Teknis",
+      "tanggal": "2026-10-08",
+      "nilai": 500000,
+      "status": "Diproses",
+      "catatan": ""
+    },
+    {
+      "id": 9,
+      "kode": "IT4-009",
+      "nama": "Jaringan lantai dua lambat",
+      "kategori": "Koneksi",
+      "unit": "Sekretariat",
+      "tanggal": "2026-10-09",
+      "nilai": 750000,
+      "status": "Selesai",
+      "catatan": "Data sintetis untuk latihan nomor 9."
+    },
+    {
+      "id": 10,
+      "kode": "IT4-010",
+      "nama": "Monitor berkedip",
+      "kategori": "Perangkat",
+      "unit": "Dinas A",
+      "tanggal": "2026-10-10",
+      "nilai": 1000000,
+      "status": "Baru",
+      "catatan": "Data sintetis untuk latihan nomor 10."
+    },
+    {
+      "id": 11,
+      "kode": "IT4-011",
+      "nama": "Aplikasi surat macet",
+      "kategori": "Aplikasi",
+      "unit": "Dinas B",
+      "tanggal": "2026-10-11",
+      "nilai": 1250000,
+      "status": "Diproses",
+      "catatan": "Data sintetis untuk latihan nomor 11."
+    },
+    {
+      "id": 12,
+      "kode": "IT4-012",
+      "nama": "Internet unit teknis putus",
+      "kategori": "Koneksi",
+      "unit": "Unit Teknis",
+      "tanggal": "2026-10-12",
+      "nilai": 0,
+      "status": "Selesai",
+      "catatan": ""
+    },
+    {
+      "id": 13,
+      "kode": "IT4-013",
+      "nama": "UPS berbunyi",
+      "kategori": "Perangkat",
+      "unit": "Sekretariat",
+      "tanggal": "2026-10-13",
+      "nilai": 250000,
+      "status": "Baru",
+      "catatan": "Data sintetis untuk latihan nomor 13."
+    },
+    {
+      "id": 14,
+      "kode": "IT4-014",
+      "nama": "Dashboard tidak memuat data",
+      "kategori": "Aplikasi",
+      "unit": "Dinas A",
+      "tanggal": "2026-10-14",
+      "nilai": 500000,
+      "status": "Diproses",
+      "catatan": "Data sintetis untuk latihan nomor 14."
+    },
+    {
+      "id": 15,
+      "kode": "IT4-015",
+      "nama": "WiFi rapat tidak stabil",
+      "kategori": "Koneksi",
+      "unit": "Dinas B",
+      "tanggal": "2026-10-15",
+      "nilai": 750000,
+      "status": "Selesai",
+      "catatan": "Data sintetis untuk latihan nomor 15."
+    },
+    {
+      "id": 16,
+      "kode": "IT4-016",
+      "nama": "Keyboard rusak",
+      "kategori": "Perangkat",
+      "unit": "Unit Teknis",
+      "tanggal": "2026-10-01",
+      "nilai": 1000000,
+      "status": "Baru",
+      "catatan": ""
+    },
+    {
+      "id": 17,
+      "kode": "IT4-017",
+      "nama": "Aplikasi presensi error",
+      "kategori": "Aplikasi",
+      "unit": "Sekretariat",
+      "tanggal": "2026-10-02",
+      "nilai": 1250000,
+      "status": "Diproses",
+      "catatan": "Data sintetis untuk latihan nomor 17."
+    },
+    {
+      "id": 18,
+      "kode": "IT4-018",
+      "nama": "Koneksi ruang operator putus",
+      "kategori": "Koneksi",
+      "unit": "Dinas A",
+      "tanggal": "2026-10-03",
+      "nilai": 0,
+      "status": "Selesai",
+      "catatan": "Data sintetis untuk latihan nomor 18."
+    },
+    {
+      "id": 19,
+      "kode": "IT4-019",
+      "nama": "Printer menarik kertas ganda",
+      "kategori": "Perangkat",
+      "unit": "Dinas B",
+      "tanggal": "2026-10-04",
+      "nilai": 250000,
+      "status": "Baru",
+      "catatan": "Data sintetis untuk latihan nomor 19."
+    },
+    {
+      "id": 20,
+      "kode": "IT4-020",
+      "nama": "Portal aset gagal simpan",
+      "kategori": "Aplikasi",
+      "unit": "Unit Teknis",
+      "tanggal": "2026-10-05",
+      "nilai": 500000,
+      "status": "Diproses",
+      "catatan": ""
+    }
+  ]
+}
