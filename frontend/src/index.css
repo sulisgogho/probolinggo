@@ -22,3 +22,47 @@
   width: 100%;
 }
 
+/* Utilitas scrollbar halus tanpa scrollbar jelek di mobile/tablet */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Penyesuaian Responsivitas Modal IDDS pada Seluruh Ukuran Layar (Mobile, Tablet, Desktop) */
+.ina-modal__dialog {
+  max-width: min(94vw, 760px) !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 639px) {
+  .ina-modal__dialog {
+    margin: 8px auto !important;
+    width: calc(100vw - 16px) !important;
+    max-width: calc(100vw - 16px) !important;
+    min-width: 0 !important;
+    border-radius: 14px !important;
+  }
+
+  .ina-modal__header {
+    padding: 12px 16px !important;
+  }
+
+  .ina-modal__body {
+    padding: 14px !important;
+    max-height: calc(100dvh - 120px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Dukungan Safe Area untuk Bottom Bar di Smartphone Modern (iOS / Android Gestures) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+

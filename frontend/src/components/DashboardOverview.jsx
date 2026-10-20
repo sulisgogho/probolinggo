@@ -1,15 +1,13 @@
 /**
  * Komponen Ringkasan Dashboard (Khusus Halaman Menu "Dashboard" di Mobile & Tablet)
  * Memisahkan halaman Dashboard dari halaman Daftar Catatan agar tampilan mobile & tablet
- * fokus, nyaman dilihat, serta menyediakan akses cepat untuk Tambah Tiket baru.
+ * fokus dan nyaman dilihat.
  *
  * Menggunakan komponen resmi @idds/react: CardPlain, Badge, Button, Skeleton, Divider
  */
 import React, { useMemo } from 'react';
 import { CardPlain, Badge, Button, Skeleton, Divider } from '@idds/react';
 import {
-  IconPlus,
-  IconClipboardList,
   IconDevices,
   IconApps,
   IconWifi,
@@ -26,7 +24,6 @@ export default function DashboardOverview({
   tickets,
   stats,
   loading,
-  onOpenCreate,
   onOpenDetail,
   onOpenEdit,
   onGoToDaftar,
@@ -89,47 +86,7 @@ export default function DashboardOverview({
 
   return (
     <div className="space-y-4 sm:space-y-5">
-      {/* Banner CTA Cepat: Tambah Tiket & Buka Daftar Catatan */}
-      <CardPlain className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-2xl p-5 sm:p-6 shadow-sm">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div className="space-y-1">
-            <Badge type="soft" variant="info" size="sm" rounded="full">
-              Layanan Cepat IT Helpdesk
-            </Badge>
-            <h2 className="text-lg sm:text-xl font-bold tracking-tight pt-1">
-              Ada Kendala Perangkat, Aplikasi, atau Jaringan?
-            </h2>
-            <p className="text-xs sm:text-sm text-blue-100 max-w-xl">
-              Catat tiket gangguan TI baru secara langsung atau pantau progres penanganan di daftar catatan.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 shrink-0">
-            <Button
-              type="button"
-              hierarchy="secondary"
-              size="md"
-              onClick={onOpenCreate}
-              prefixIcon={<IconPlus size={18} />}
-              className="!bg-white !text-blue-700 !border-white hover:!bg-blue-50 font-semibold justify-center shadow-xs"
-            >
-              Tambah Tiket Baru
-            </Button>
-            <Button
-              type="button"
-              hierarchy="secondary"
-              size="md"
-              onClick={onGoToDaftar}
-              prefixIcon={<IconClipboardList size={18} />}
-              className="!bg-blue-700/60 !text-white !border-white/30 hover:!bg-blue-700 justify-center"
-            >
-              Lihat Daftar Catatan
-            </Button>
-          </div>
-        </div>
-      </CardPlain>
-
-      {/* Grid 2 Kolom di Tablet: Distribusi Kategori & Progres Penyelesaian */}
+      {/* Grid 3 Kolom di Tablet: Distribusi Kategori & Progres Penyelesaian */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {kategoriStats.map((kat) => (
           <CardPlain

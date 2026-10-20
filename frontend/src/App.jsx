@@ -13,8 +13,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Alert, useToast } from '@idds/react';
 import Navbar from './components/Navbar';
 import MobileBottomNav from './components/MobileBottomNav';
-import StatsCards from './components/StatsCards';
-import DashboardOverview from './components/DashboardOverview';
+import DashboardAnalytics from './components/DashboardAnalytics';
 import UserSettingsView from './components/UserSettingsView';
 import LoginView from './components/LoginView';
 import TicketTable from './components/TicketTable';
@@ -232,6 +231,21 @@ export default function App() {
     setSelectedStatus('Semua');
   };
 
+  // Handler Analisis: Filter dari kartu Dashboard langsung membuka tab Daftar
+  const handleApplyFilterAndGoToDaftar = ({ unit, kategori, status }) => {
+    if (unit) {
+      setSearchQuery(unit);
+    }
+    if (kategori) {
+      setSelectedKategori(kategori);
+    }
+    if (status) {
+      setSelectedStatus(status);
+    }
+    setActiveMenu('daftar');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Jika belum login, tampilkan halaman LoginView
   if (!session?.token) {
     return <LoginView onLoginSuccess={handleLoginSuccess} loginApiCall={loginApi} />;
@@ -266,70 +280,24 @@ export default function App() {
         )}
 
         {/* =================================================================== */}
-        {/* MENU 1: DASHBOARD                                                   */}
+        {/* MENU 1: DASHBOARD (ANALISIS MULTI-DIMENSI: STATUS, KATEGORI, UNIT)  */}
         {/* =================================================================== */}
         {activeMenu === 'dashboard' && (
-          <>
-            {/* Kartu Ringkasan Statistik Dashboard */}
-            <StatsCards
-              stats={stats}
-              loading={loading}
-              activeStatusFilter={selectedStatus}
-              onQuickStatusFilter={(statusVal) => {
-                const nextStatus =
-                  selectedStatus === statusVal && statusVal !== 'Semua'
-                    ? 'Semua'
-                    : statusVal;
-                setSelectedStatus(nextStatus);
-                // Pada mobile/tablet (< lg), klik kartu status mengarahkan ke halaman Daftar
-                if (typeof window !== 'undefined' && window.innerWidth < 1024) {
-                  setActiveMenu('daftar');
-                }
-              }}
-            />
-
-            {/* Di Mobile & Tablet (< lg): Tampilkan Ringkasan Dashboard & Aksi Cepat Tambah Tiket (Terpisah dari Daftar) */}
-            <div className="block lg:hidden">
-              <DashboardOverview
-                tickets={tickets}
-                stats={stats}
-                loading={loading}
-                onOpenCreate={handleOpenCreate}
-                onOpenDetail={(ticket) => setDetailTicket(ticket)}
-                onOpenEdit={(ticket) => {
-                  setEditingTicket(ticket);
-                  setIsFormOpen(true);
-                }}
-                onGoToDaftar={() => setActiveMenu('daftar')}
-                onSelectKategoriFilter={(kat) => {
-                  setSelectedKategori(kat);
-                  setActiveMenu('daftar');
-                }}
-              />
-            </div>
-
-            {/* Di Desktop (lg+): Tampilkan Tabel Lengkap Secara Langsung di Bawah Statistik */}
-            <div className="hidden lg:block">
-              <TicketTable
-                tickets={tickets}
-                loading={loading}
-                searchQuery={searchQuery}
-                onSearchChange={setSearchQuery}
-                selectedKategori={selectedKategori}
-                onKategoriChange={setSelectedKategori}
-                selectedStatus={selectedStatus}
-                onStatusChange={setSelectedStatus}
-                onResetFilter={handleResetFilter}
-                onOpenCreate={handleOpenCreate}
-                onOpenDetail={(ticket) => setDetailTicket(ticket)}
-                onOpenEdit={(ticket) => {
-                  setEditingTicket(ticket);
-                  setIsFormOpen(true);
-                }}
-                onOpenDelete={(ticket) => setDeletingTicket(ticket)}
-              />
-            </div>
-          </>
+          <DashboardAnalytics
+            tickets={tickets}
+            stats={stats}
+            loading={loading}
+            onOpenDetail={(ticket) => setDetailTicket(ticket)}
+            onOpenEdit={(ticket) => {
+              setEditingTicket(ticket);
+              setIsFormOpen(true);
+            }}
+            onGoToDaftar={() => {
+              setActiveMenu('daftar');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onApplyFilterAndGoToDaftar={handleApplyFilterAndGoToDaftar}
+          />
         )}
 
         {/* =================================================================== */}
@@ -386,7 +354,6 @@ export default function App() {
           setActiveMenu(menuId);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
-        totalTickets={stats?.total}
       />
 
       {/* Modal Tambah / Ubah Tiket */}
