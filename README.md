@@ -2,6 +2,9 @@
 
 Aplikasi web manajemen dan pencatatan gangguan Teknologi Informasi (IT Helpdesk) berbasis **INA Digital Design System (IDDS)** untuk memantau laporan insiden perangkat keras, aplikasi layanan, serta infrastruktur jaringan lintas unit kerja.
 
+> [!NOTE]
+> Untuk panduan lengkap materi presentasi kepada pimpinan/stakeholder dan arsitektur teknis bagi tim pengembang, silakan pelajari dokumen resmi: **[`PANDUAN_PRESENTASI_DAN_ARSITEKTUR.md`](./PANDUAN_PRESENTASI_DAN_ARSITEKTUR.md)**.
+
 ---
 
 ## Tumpukan Teknologi (Tech Stack)
